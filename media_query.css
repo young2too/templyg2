@@ -1,0 +1,93 @@
+div.main_content{
+}
+
+div.grid1{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top:20px;
+  font-size: 35px;
+  height:100%;
+}
+
+h2{
+  display: none;
+}
+
+div.login_manager_text_div{
+  margin: 40px auto;
+}
+
+h1{
+  font-size: 70px;
+  margin: 0;
+}
+div.admin_login_is_here_div{
+  font-size: 35px;
+  margin-bottom: 30px;
+}
+
+br.PC_only{
+  display: none;
+}
+
+input[type=text],input[type=number],input[type=password],input[type=date]{
+  height:35px;
+  font-size: 30px;
+}
+
+input[type=button],input[type=submit]{
+  font-size : 25px;
+}
+
+div.adminlogin{
+  width:100%;
+
+}
+/*
+table[id=table_output]{
+  display: none;
+} */
+
+div.top_menu_btn_div{
+  font-size: 35px;
+}
+
+div.top_menu_child{
+  width:100%;
+  margin: 0;
+  padding: 20px 0px;
+}
+
+div.loginedform{
+  text-align: center;
+  width: inherit;
+}
+
+div.loginform{
+  width:inherit;
+}
+
+div.footer{
+  font-size : 20px
+}
+
+div.sidemenu{
+  width:100%;
+}
+
+li.vertical{
+  margin: 0;
+}
+
+div.search_reg{
+  margin: 80px auto;
+}
+
+select.name_input{
+  height:35px;
+}
+
+input.score_putin{
+  width : 150px;
+}

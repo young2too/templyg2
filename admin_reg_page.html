@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>관리자 등록 페이지(최고관리자용)</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" media="screen and (max-width: 768px)" href="media_query.css" />
+  <script type="text/javascript" src="fetch-2.0.2/fetch.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
+</head>
+<script language = "JavaScript">
+var is_check_dupe = false;
+function check_ID(){
+  if(document.getElementById("admin_id").value==""){
+    alert("아이디를 입력하지 않았습니다");
+    return document.getElementById("admin_id").focus();
+  }
+  else{
+    var tempid = document.getElementById("admin_id").value;
+    dupe_frm1.location.href ="./check_id_dupe.php?admin_id="+tempid;
+    if(is_check_dupe==true){
+      document.getElementById('dupe_confirm_btn').disabled = true;
+    }
+  }
+}
+function check_all_clear(){
+  if(document.getElementById("admin_id").value==""||
+  document.getElementById("admin_pw").value==""||
+  document.getElementById("admin_pw2").value==""||
+  document.getElementById("admin_name").value==""||
+  is_check_dupe==false){
+    if(document.getElementById("admin_id").value==""){
+      alert("아이디를 입력하지 않았습니다");
+      return document.getElementById("admin_id").focus();
+    }
+    else if(document.getElementById("admin_pw").value==""){
+      alert("비밀번호를 입력하지 않았습니다");
+      document.getElementById("admin_pw").focus();
+    }
+    else if(document.getElementById("admin_pw2").value==""){
+      alert("비밀번호 확인을 입력하지 않았습니다");
+      document.getElementById("admin_pw2").focus();
+    }
+    else if(document.getElementById("admin_name").value==""){
+      alert("이름을 입력하지 않았습니다");
+      document.getElementById("admin_name").focus();
+    }
+    else if(is_check_dupe == false){
+      alert("중복확인 해주세요!");
+    }
+  }
+  else if(document.getElementById("admin_pw").value != document.getElementById("admin_pw2").value){
+    alert("비밀번호와 비밀번호 확인이 일치하지 않습니다!")
+    document.getElementById("admin_pw").value=""
+    document.getElementById("admin_pw2").value=""
+    return document.getElementById("admin_pw").focus();
+  }
+  else{
+    document.getElementById("admin_reg_form").submit();
+  }
+}
+</script>
+<body>
+  <h1><a class="title" href="index.php">MADE_BY_LYG</a></h1>
+  <hr>
+  <h2>관리자 등록 페이지</h2>
+  <div class="grid1">
+    <div class="main_content">
+      <div class="reg">
+        <form action="admin.php" method="post" id="admin_reg_form">
+          <fieldset>
+            <legend>관리자 등록정보(필수)</legend>
+            <label for="admin_name">이름:<input type="text" id="admin_name" name="admin_name"></label><br>
+            <label for="admin_id"> ID : <input type="text" id="admin_id" name="admin_id"></label>
+            <input type="button" id="dupe_confirm_btn" value="중복확인" onclick="check_ID()"><br>
+            <label for="admin_pw"> PW : <input type="password" id="admin_pw" name="admin_pw"></label><br>
+            <label for="admin_pw2"> PW확인 : <input type="password" id="admin_pw2" name="admin_pw"></label><br>
+            <input type="button" value="확인" id="confirm_btn" name="confirm_btn" onclick="check_all_clear()">
+          </fieldset>
+        </form>
+        <iframe id="dupe_frm1" scrolling="no" frameborder="no" width="0" height="0" name="dupe_frm1"></iframe>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <nav>
+      <ul id="footul">
+      </ul>
+    </nav>
+  </div>
+  <script>
+  fetch('footlist').then(function(response){
+    response.text().then(function(text){
+      document.querySelector('#footul').innerHTML = text;
+    })
+  });
+  </script>
+</body>
+</html>

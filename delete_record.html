@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" media="screen and (max-width: 768px)" href="media_query.css" />
+  <script type="text/javascript" src="fetch-2.0.2/fetch.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
+  <title>
+    전적 삭제 페이지
+  </title>
+</head>
+<body>
+  <h1><a class="title" href="index.php">MADE_BY_LYG</a></h1>
+  <h2>전적 삭제 페이지</h2>
+  <hr>
+  <div class="grid1">
+    <div class="sidemenu">
+      <ul id="sideul">
+      </ul>
+    </div>
+    <div class="main_content">
+      <div class="search_reg">
+        <form action="search_record.php" method="post" id="search_form">
+        <label for="이름 검색">플레이어 이름 :
+          <input class="search" type="text" name="name_4_search" placeholder="플레이어 이름"></label><br>
+          <label for="날짜 검색">기간 선택 :
+            <input class="search_date" type="date" name="date_4_search_start" >~
+            <input class="search_date" type="date" name="date_4_search_end" >
+          </label>
+          <input class="search_btn_class" type="submit" value="검색" name="search_btn">
+          </form>
+        </div>
+    </div>
+  </div>
+    <div class="footer">
+      <nav>
+        <ul id="footul">
+
+        </ul>
+      </nav>
+    </div>
+    <script>
+    //오늘 날짜로 초기화
+    var x = document.getElementsByClassName('search_date');
+    var i=0;
+    for(i=0;i<x.length;i++){
+      x[i].valueAsDate = new Date();
+    }
+    fetch('manager_sidelist').then(function(response){
+      response.text().then(function(text){
+        document.querySelector('#sideul').innerHTML = text;
+      })
+    });
+    fetch('footlist').then(function(response){
+      response.text().then(function(text){
+        document.querySelector('#footul').innerHTML = text;
+      })
+    });
+    </script>
+  </body>
+  </html>

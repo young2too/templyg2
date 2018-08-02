@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>팝업창</title>
+  <script>
+  <!--
+  function setCookie(name, value, expiredays) {
+    var today = new Date();
+    today.setDate(today.getDate() + expiredays);
+
+    document.cookie = name + '=' + escape(value) + '; path=/; expires=' + today.toGMTString() + ';'
+  }
+
+  function closePop() {
+    if(document.forms[0].todayPop.checked)
+    setCookie('record_site', 'rangs', 1);
+    self.close();
+  }
+  //-->
+</script>
+</head>
+<body>
+  <form>
+    <div>
+      처음 오셨나요? 처음 오신 분은 닉네임을 등록하세요!<br>
+      닉네임을 이미 등록하셨다면 공지사항을 읽어보세요!<br>
+      이 사이트는 크롬에 최적화 되어 있습니다!
+    </div>
+    <div style="position:absolute;left:80px;top:230px;">
+      <input type="checkbox" name="todayPop" onclick="closePop()">
+      <b style="color:blue">오늘하루는 그만보기</b>
+    </div>
+
+  </form>
+</body>
+</html>

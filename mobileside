@@ -1,0 +1,5 @@
+<li class="vertical" onclick="window.open('index.php','_self')"><a class="vertical" >처음으로</a></li>
+<li class="vertical" onclick="window.open('search_record_user.html','_self')"><a class="vertical">전적검색</a></li>
+<li class="vertical" onclick="window.open('name_reg_page.php','_self')"><a class="vertical">닉네임 등록</a></li>
+<li class="vertical" onclick="window.open('float_chat.html','_blank', 'width=500,height=400, top=500, left=1000')"><a class="vertical">채팅방 열기</a></li>
+<li class="vertical" onclick="window.open('admin_page.php','_self')"><a class="vertical">전적등록하기(Test)</a></li>

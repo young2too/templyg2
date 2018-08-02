@@ -1,0 +1,4 @@
+<li class="vertical" onclick="window.open('admin_page.php','_self')">전적등록</li>
+<li class="vertical" onclick="window.open('delete_record.html','_self')"><a class="vertical">전적삭제</a></li>
+<li class="vertical" onclick="window.open('refresh_form.html','_self')"><a class="vertical">전적 불러오기(천봉)</a></li>
+<li class="vertical" onclick="window.open('index.php','_self')"><a class="vertical">처음으로</a></li>

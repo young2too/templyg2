@@ -1,0 +1,4 @@
+<li class="horizen" onclick="window.open('index.php','_self')">처음으로</li>
+        <li class="horizen">young2too13@gmail.com</li>
+        <li class="horizen">Tel 010-123-1234</li>
+        <li class="horizen">ver MADE_BY_LYG</li>
